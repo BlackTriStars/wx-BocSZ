@@ -17,7 +17,8 @@ export default {
 </script>
 
 <style>
+@import './styles/fonts/style.css';
 #app {
-
+  background: #ececec;
 }
 </style>
