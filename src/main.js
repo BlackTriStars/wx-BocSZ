@@ -8,7 +8,6 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.config.productionTip = false
 import 'lib-flexible';
-import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper);
 
