@@ -5,20 +5,21 @@ import index from '@/pages/index.vue'
 
 //  user
 import user from '@/pages/user.vue'
-  import userIndex from '@/pages/user/index.vue'
-  import collection from '@/pages/user/collection.vue'
-  import integral from '@/pages/user/integral.vue'
-  import introduce from '@/pages/user/introduce.vue'
-  
+import userIndex from '@/pages/user/index.vue'
+import collection from '@/pages/user/collection.vue'
+import integral from '@/pages/user/integral.vue'
+import introduce from '@/pages/user/introduce.vue'
+
 import survey from '@/pages/survey.vue'
-  import surveyIndex from '@/pages/survey/index.vue'
-  import surveyList from '@/pages/survey/list.vue'
+import surveyIndex from '@/pages/survey/index.vue'
+import surveyList from '@/pages/survey/list.vue'
+
 import myStudy from '@/pages/myStudy.vue'
+import material from '@/pages/material.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'index',
       component: index
@@ -26,10 +27,9 @@ export default new Router({
     {
       path: '/user',
       component: user,
-      children:[
-        {
-          path:'',
-          name:'user',
+      children: [{
+          path: '',
+          name: 'user',
           component: userIndex
         },
         {
@@ -40,7 +40,7 @@ export default new Router({
           path: 'integral',
           name: 'integral',
           component: integral
-        },{
+        }, {
           path: 'introduce',
           name: 'introduce',
           component: introduce
@@ -52,21 +52,24 @@ export default new Router({
       name: 'myStudy',
       component: myStudy
     },
-     {
-       path: '/survey',
-       component: survey,
-       children: [
-         {
-           path: '',
-           name: 'survey',
-           component: surveyIndex
-         },{
-           path: 'list',
-           name: 'surveyList',
-           component: surveyList
-         }
-       ]
-     }
+    {
+      path: '/survey',
+      component: survey,
+      children: [{
+        path: '',
+        name: 'survey',
+        component: surveyIndex
+      }, {
+        path: 'list',
+        name: 'surveyList',
+        component: surveyList
+      }]
+    },
+    {
+      path: '/material',
+      name: 'material',
+      component: material
+    }
 
   ]
 })
