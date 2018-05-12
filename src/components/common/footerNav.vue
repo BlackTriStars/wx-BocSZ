@@ -29,7 +29,32 @@ export default {
   },
   methods:{
     changeCurrentActive(index){
-      this.currentIndex = index;
+      let url;
+      switch (index) {
+        case 0:
+          url='index'
+          break;
+        case 1:
+          url=''
+          break;
+        case 2:
+          url='user'
+          break;
+      
+        default:
+          break;
+      }
+      this.$router.push({ name: url})
+    }
+  },
+  watch:{
+    $route(v){
+      if(v.name === 'index'){ 
+        this.currentIndex = 0;
+      }
+      if(v.name === 'user'){
+        this.currentIndex = 0;        
+      }
     }
   }
 }
