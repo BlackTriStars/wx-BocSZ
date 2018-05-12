@@ -29,7 +29,7 @@
       </div>
       <div class="navList">
         <ul>
-          <li v-for="(nav, index) in navList" :key="index">
+          <li v-for="(nav, index) in navList" :key="index" @click="go(nav.name)">
             <img :src="require('../assets/index/'+nav.img+'.png')" alt="">
             <span>{{nav.content}}</span>
           </li>
@@ -68,19 +68,23 @@ export default {
       navList:[
         {
           content:'我的学习',
-          img:'nav-study'
+          img:'nav-study',
+          name: 'myStudy'
         },
         {
           content:'实用工具',
-          img:'nav-tools'
+          img:'nav-tools',
+          name: ''          
         },
         {
           content:'培训计划',
-          img:'nav-plan'
+          img:'nav-plan',
+          name: ''          
         },
         {
           content:'问卷调查',
-          img:'nav-research'
+          img:'nav-research',
+          name: 'survey'          
         }
       ],
       mainList:[
@@ -164,6 +168,9 @@ export default {
   methods:{
     search(a){
       console.log(a)
+    },
+    go(name){
+      this.$router.push({name})
     }
   }
 }

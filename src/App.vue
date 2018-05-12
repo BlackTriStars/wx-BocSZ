@@ -46,11 +46,11 @@ export default {
         case 'integral':
           this.changeHeader({title:'我的积分'})
           break;
-        case 'study':
+        case 'myStudy':
           this.changeHeader({title:'我的学习'})
           break;
         case 'survey':
-          this.changeHeader({title:'问卷调查'})
+          this.changeHeader({title:'问卷调研'})
           break;
         default:
           break;

@@ -16,7 +16,8 @@
           <p>{{item.content}}</p>
           <div class="data">
             <span v-for="(v,i) in item.data" :key="i">
-              <i :class="'icon-'+v.name"></i>
+              <img src="../../assets/myStudy/number.png" alt="" v-if="v.name === 'num'">
+              <i :class="'icon-'+v.name" v-else></i>
               {{v.value}}
             </span>
           </div>
@@ -202,6 +203,11 @@ export default {
             &>span{
               display: flex;
               align-items: center;
+              img{
+                width: 58px;
+                height: 30px;
+                margin-right: 8px;  
+              }
             }
             i{
               font-size: 38px;
