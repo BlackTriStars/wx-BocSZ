@@ -39,6 +39,7 @@ export default {
     color: rgb(255, 255, 255);
     text-align: center;
     line-height: 160px;
+    z-index: 999;
     &>i{
       position: absolute;
       top: 50%;
