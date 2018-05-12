@@ -1,8 +1,8 @@
 @<template>
   <header :style="{background:header.color}">
-    <i></i>
+    <i class="icon-home" @click="$router.push({name:'index'})"></i>
     {{header.title}}
-    <i></i>
+    <i class="right">刷新</i>
   </header>
 </template>
 
@@ -39,6 +39,16 @@ export default {
     color: rgb(255, 255, 255);
     text-align: center;
     line-height: 160px;
-    
+    &>i{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &>i:first-child{
+      left: 40px;
+    }
+    &>i:last-child{
+      right: 40px;
+    }
   }
 </style>

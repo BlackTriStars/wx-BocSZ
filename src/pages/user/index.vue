@@ -59,7 +59,7 @@ export default {
           num: 12
         },{
           title: '我的学习',
-          name: 'study',
+          name: 'myStudy',
           img:'',
           num: 109
         },{
