@@ -40,7 +40,18 @@ export default {
         case 'user':
           this.changeHeader({title:'个人中心'})
           break;
-      
+        case 'collection':
+          this.changeHeader({title:'培训资料',color:'#db3f40'})
+          break;
+        case 'integral':
+          this.changeHeader({title:'我的积分'})
+          break;
+        case 'study':
+          this.changeHeader({title:'我的学习'})
+          break;
+        case 'survey':
+          this.changeHeader({title:'问卷调查'})
+          break;
         default:
           break;
       }
