@@ -32,6 +32,7 @@ export default {
 <style lang="less">
   .container{
     // padding: 160px 0 146px;
+    height: 100%;
     &.paddingTop{
       padding-top: 160px;
     }
