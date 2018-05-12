@@ -12,6 +12,7 @@ import user from '@/pages/user.vue'
   import study from '@/pages/user/study.vue'
   import survey from '@/pages/user/survey.vue'
 
+import myStudy from '@/pages/myStudy.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -54,6 +55,11 @@ export default new Router({
 
 
       ]
+    },
+    {
+      path: '/myStudy',
+      name: 'myStudy',
+      component: myStudy
     }
   ]
 })
