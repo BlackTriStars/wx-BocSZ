@@ -35,7 +35,17 @@ import materialIndex from '@/pages/materialIndex.vue'
 
 import myStudy from '@/pages/myStudy.vue'
 import material from '@/pages/material.vue'
+<<<<<<< HEAD
 import trainPlan from '@/pages/trainPlan.vue'
+=======
+
+import tools from '@/pages/tools.vue'
+import toolsIndex from '@/pages/tools/index.vue'
+import toolsApp from '@/pages/tools/app.vue'
+import toolsLive from '@/pages/tools/live.vue'
+import toolsReview from '@/pages/tools/review.vue'
+
+>>>>>>> 09b8de96965b1d2d455c76573d89b1470e84e80a
 Vue.use(Router)
 
 export default new Router({
@@ -135,6 +145,32 @@ export default new Router({
       path: '/material',
       name: 'material',
       component: material
+    },
+    {
+      path: '/tools',
+      name: 'tools',
+      component: tools,
+      children: [{
+          path: '',
+          name: 'toolsIndex',
+          component: toolsIndex
+        },
+        {
+          path: 'app',
+          name: 'app',
+          component: toolsApp
+        },
+        {
+          path: 'live',
+          name: 'live',
+          component: toolsLive
+        },
+        {
+          path: 'review',
+          name: 'review',
+          component: toolsReview
+        }
+      ]
     }
 
   ]

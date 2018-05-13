@@ -70,6 +70,8 @@ export default {
           break;
         case "recommended":
           this.changeHeader({ title: "热门推荐" });
+          case "tools":
+          this.changeHeader({ title: "实用工具" });
           break;
           case "trainPlan":
           this.changeHeader({ title: "培训计划" });
