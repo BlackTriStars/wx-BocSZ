@@ -74,12 +74,12 @@ export default {
         {
           content:'实用工具',
           img:'nav-tools',
-          name: ''          
+          name: 'tools'          
         },
         {
           content:'培训计划',
           img:'nav-plan',
-          name: ''          
+          name: 'trainPlan'          
         },
         {
           content:'问卷调查',

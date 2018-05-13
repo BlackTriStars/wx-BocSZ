@@ -3,9 +3,9 @@
     <div class="banner"></div>
     <div class="content">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li @click="$router.push({name:'app'})"></li>
+            <li @click="$router.push({name:'live'})"></li>
+            <li @click="$router.push({name:'review'})"></li>
         </ul>
         <p>点击列表查看详情</p>
     </div>
