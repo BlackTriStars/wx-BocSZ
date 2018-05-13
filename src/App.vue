@@ -71,6 +71,9 @@ export default {
         case "recommended":
           this.changeHeader({ title: "热门推荐" });
           break;
+          case "trainPlan":
+          this.changeHeader({ title: "培训计划" });
+          break;
         default:
           break;
       }

@@ -35,6 +35,7 @@ import materialIndex from '@/pages/materialIndex.vue'
 
 import myStudy from '@/pages/myStudy.vue'
 import material from '@/pages/material.vue'
+import trainPlan from '@/pages/trainPlan.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -65,6 +66,11 @@ export default new Router({
           component: introduce
         }
       ]
+    },
+    {
+      path: '/trainPlan',
+      name: 'trainPlan',
+      component: trainPlan
     },
     {
       path: '/myStudy',
