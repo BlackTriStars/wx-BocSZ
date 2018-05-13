@@ -44,11 +44,11 @@
               <img class="icon" :src="require('../assets/index/' + main.topLine.img + '.png')" alt="">
               {{main.topLine.title}}
             </div>
-            <span class="more right">
+            <span class="more right" @click="go(main.name)">
               查看更多 <i class="icon-more"></i>
             </span>
           </div>
-          <div class="mainItem left" v-for="(item,idx) in main.main" :key="idx">
+          <div class="mainItem left" v-for="(item,idx) in main.main" :key="idx" @click="go(item.name)">
             <div class="item">
               <img :src="require('../assets/index/' + item.img + '.png')" alt="">
               <p class="desc">{{item.content}}</p>
@@ -97,12 +97,15 @@ export default {
           main:[
             {
               img:'index-img1',
-              content: '理财新法规'
+              content: '理财新法规',
+              name: 'material'
             },{
               img:'index-img1',
-              content: '理财新法规'
+              content: '理财新法规',
+              name: 'material'
             },
-          ]
+          ],
+          name: 'latestLesson'
         },
         {
           topLine:{
@@ -113,12 +116,15 @@ export default {
           main:[
             {
               img:'index-img2',
-              content: '企业文化'
+              content: '企业文化',
+              name: 'material'
             },{
               img:'index-img3',
-              content: '开发新客户'
+              content: '开发新客户',
+              name: 'material'
             },
-          ]
+          ],
+          name: 'recommended'
         },
         {
           topLine:{
@@ -129,12 +135,15 @@ export default {
           main:[
             {
               img:'index-img4',
-              content: '提升团队凝聚力培训'
+              content: '提升团队凝聚力培训',
+              name: 'dynamicList'
             },{
               img:'index-img5',
-              content: '销售培训'
+              content: '销售培训',
+              name: 'dynamicList'
             },
-          ]
+          ],
+          name: 'dynamic'
         },
         {
           topLine:{
@@ -145,20 +154,23 @@ export default {
           main:[
             {
               img:'index-img6',
-              content: '提升团队凝聚力培训'
+              content: '提升团队凝聚力培训',
+              name: 'historyList'
             },{
               img:'index-img7',
-              content: '销售培训'
+              content: '销售培训',
+              name: 'historyList'
             },
-          ]
+          ],
+          name: 'history'
         },
       ],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
-          loop: true,
-          autoPlay: true
-        }
+        },
+        loop: true,
+        autoPlay: true
       }
     }
   },
@@ -183,6 +195,10 @@ export default {
         height: 500px;
         width: 100%;
         background: #ccc;
+        img{
+          width: 100%;
+          height: 100%;
+        }
         .searchWrap{
           position: absolute;
           width: 100%;

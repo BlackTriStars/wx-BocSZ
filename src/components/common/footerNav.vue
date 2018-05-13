@@ -35,7 +35,7 @@ export default {
           url='index'
           break;
         case 1:
-          url=''
+          url='materialIndex'
           break;
         case 2:
           url='user'

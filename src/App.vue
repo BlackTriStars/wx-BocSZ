@@ -24,6 +24,9 @@ export default {
   mounted() {
     this.checkoutPath(this.$route.name);
   },
+  updated() {  
+        window.scroll(0, 0);  
+  },
   methods: {
     ...mapMutations(["changeHeader"]),
     // 根据当前url 给header设置不同颜色
@@ -55,6 +58,18 @@ export default {
           break;
         case "material":
           this.changeHeader({ title: "培训资料" });
+          break;
+        case "dynamic":
+          this.changeHeader({ title: "培训动态", color:'#38be4f' });
+          break;
+        case "history":
+          this.changeHeader({ title: "往期回顾", color:'#38be4f' });
+          break;
+        case "latestLesson":
+          this.changeHeader({ title: "最新课程" });
+          break;
+        case "recommended":
+          this.changeHeader({ title: "热门推荐" });
           break;
         default:
           break;
