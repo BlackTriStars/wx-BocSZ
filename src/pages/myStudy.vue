@@ -58,7 +58,7 @@ export default {
 <style lang='less'>
 .my-study {
   background-color: #edffff;
-  min-height: 100%;
+  min-height: 100vh;
   .toggle-container {
     height: 162px;
     background: url("../assets/myStudy/banner.png") 0 0 no-repeat;

@@ -84,7 +84,7 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 21px 0;
-        font-size: 14px;/*px*/
+        font-size: 14px;
         &.active{
           color: #0082d8;
         }
