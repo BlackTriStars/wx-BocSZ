@@ -1,26 +1,26 @@
 <template>
   <div class="my-study">
-        <zh-header title='我的学习'></zh-header>
-        <div class="toggle-container">
-            <ul class="toggle">
-                <li>进行中</li>
-                <li>已完成</li>
-            </ul>
-        </div>
-        <div class="content">
-            <ul>
-                <li v-for="(item, index) in list" :key='index'>
-                    <img :src="require('../assets/myStudy/' +item.img + '.png')" alt="">
-                    <h4>{{item.title}}</h4>
-                    <p>{{item.text}}</p>
-                    <div class="status">
-                        <span class="number">56</span>
-                        <span class="like">36</span>
-                        <span class="wechat">16</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <zh-header title='我的学习'></zh-header>
+    <div class="toggle-container">
+      <ul class="toggle">
+        <li>进行中</li>
+        <li>已完成</li>
+      </ul>
+    </div>
+    <div class="content">
+      <ul>
+        <li v-for="(item, index) in list" :key='index'>
+          <img :src="require('../assets/myStudy/' +item.img + '.png')" alt="">
+          <h4>{{item.title}}</h4>
+          <p>{{item.text}}</p>
+          <div class="status">
+            <span class="number">{{item.numberNum}}</span>
+            <span class="like" @click="zan(index)">{{item.likeNum}}</span>
+            <span class="wechat">{{item.wechartNum}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 <script>
@@ -36,22 +36,51 @@ export default {
           title: "企业文化",
           img: "culture",
           text:
-            "近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长阿里山扩大飞机卢卡斯的房间里空间"
+            "近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长阿里山扩大飞机卢卡斯的房间里空间",
+          likeNum: "36",
+          numberNum: "56",
+          wechartNum: "16",
+          iszan: "false"
         },
         {
           title: "规则制度",
           img: "rule",
           text:
-            "近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长阿里山扩大飞机卢卡斯的房间里空间"
+            "近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长阿里山扩大飞机卢卡斯的房间里空间",
+          likeNum: "35",
+          numberNum: "56",
+          wechartNum: "16",
+          iszan: "false"
         },
         {
           title: "法律法规",
           img: "law",
           text:
-            "近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长阿里山扩大飞机卢卡斯的房间里空间"
+            "近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长阿里山扩大飞机卢卡斯的房间里空间",
+          likeNum: "34",
+          numberNum: "56",
+          wechartNum: "16",
+          iszan: "false"
         }
-      ]
+      ],
+
+      
     };
+  },
+  methods: {
+    zan: function(i) {
+      
+      console.log(i);
+      
+
+      if(!this.list[i].iszan){
+        this.list[i].iszan = true;
+        this.list[i].likeNum--
+      }else{
+        this.list[i].iszan = false;
+        this.list[i].likeNum++
+      }
+    }
   }
 };
 </script>
@@ -106,7 +135,7 @@ export default {
         left: 0;
       }
       position: relative;
-      padding:30px 0 30px 37vw;
+      padding: 30px 0 30px 37vw;
       border-bottom: 1px solid #afb4b4;
       h4 {
         font-size: 30px;
@@ -115,6 +144,11 @@ export default {
         margin-top: 28px;
         max-height: 135px;
         overflow: hidden;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
       }
       .status {
         display: flex;
