@@ -113,7 +113,7 @@ export default {
       }
       p {
         margin-top: 28px;
-        max-height: 116px;
+        max-height: 135px;
         overflow: hidden;
       }
       .status {
