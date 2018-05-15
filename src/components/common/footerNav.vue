@@ -92,13 +92,10 @@ export default {
         align-items: center;
         padding: 21px 0;
         font-size: 14px;
-<<<<<<< HEAD
         &>i{
           font-size: 60px;
           margin-bottom: 4px;
         }
-=======
->>>>>>> 03f79730f7f725e46a4f11cf2aa664d1d88accba
         &.active{
           color: #0082d8;
         }
