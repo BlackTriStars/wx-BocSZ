@@ -103,9 +103,20 @@ a {
           margin-top: 17px;
           font-size: 30px;
           line-height: 44px;
+          display: -webkit-box;
+          overflow: hidden;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        
+        a{
+          position: absolute;
+          right: 0;
           span {
             color: rgb(255, 84, 0);
           }
+          }
+          
         }
       }
     }

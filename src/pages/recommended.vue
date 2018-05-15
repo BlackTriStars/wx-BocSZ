@@ -113,7 +113,7 @@ export default {
     }
     .item {
       margin-top: 30px;
-      height: 263px;
+      // height: 263px;
       width: 100%;
       border-bottom: 1px solid #999; /*no*/
       position: relative;

@@ -1,40 +1,40 @@
 <template>
   <div class="material">
-      <div class="video">
-        <div class="play"></div>
-      </div>
-      <div class="video-info">
-        <h4>课程名称: 企业文化</h4>
-        <div class="info">
-            <span class="points">
-                积分：2
-            </span>
-            <div class="status">
-                <span class="collect">56</span>
-                <span class="number">56</span>
-                <span class="like">36</span>
-                <span class="wechat">16</span>
-            </div>
+    <div class="video">
+      <div class="play"></div>
+    </div>
+    <div class="video-info">
+      <h4>课程名称: 企业文化</h4>
+      <div class="info">
+        <span class="points">
+          积分：{{this.jifen}}
+        </span>
+        <div class="status">
+          <span class="collect icon-love"  @click="collect">{{this.number.collect}}</span>
+          <span class="number">{{this.number.number}}</span>
+          <span class="like icon-like" @click="zan">{{this.number.like}}</span>
+          <span class="wechat icon-wechat">{{this.number.wechart}}</span>
         </div>
       </div>
-      <div class="toggle">
-          <ul class="toggle-buttons">
-            <li @click="toggleType('intro')" :class="{ active: type=='intro' }">课程介绍</li>
-            <li @click="toggleType('comments')"  :class="{ active: type=='comments' }">评论</li>
-          </ul>
-          <p v-show="type=='intro'">
-              近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人
-          </p>
-          <div class="comment-bar" v-for="(comment, index) in comments" :key='index'  v-show="type=='comments'">
-              <div class="user-info">
-                <img :src="require('../assets/material/' +comment.avatar + '.png')" alt="">
-                <span class="name">{{comment.name}}</span>
-              </div>
-              <p>{{comment.content}}</p>
-          </div>
-          <textarea cols="30" rows="10" placeholder="欢迎大家评论留言" v-show="type=='comments'"></textarea>
-            <button v-show="type=='comments'">评论</button>
+    </div>
+    <div class="toggle">
+      <ul class="toggle-buttons">
+        <li @click="toggleType('intro')" :class="{ active: type=='intro' }">课程介绍</li>
+        <li @click="toggleType('comments')" :class="{ active: type=='comments' }">评论</li>
+      </ul>
+      <p v-show="type=='intro'">
+        近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人
+      </p>
+      <div class="comment-bar" v-for="(comment, index) in comments" :key='index' v-show="type=='comments'">
+        <div class="user-info">
+          <img :src="require('../assets/material/' +comment.avatar + '.png')" alt="">
+          <span class="name">{{comment.name}}</span>
+        </div>
+        <p>{{comment.content}}</p>
       </div>
+      <textarea cols="30" rows="10" placeholder="欢迎大家评论留言" v-show="type=='comments'"></textarea>
+      <button v-show="type=='comments'">评论</button>
+    </div>
   </div>
 </template>
 <script>
@@ -42,6 +42,7 @@ export default {
   data() {
     return {
       type: "intro",
+      jifen: 2,
       comments: [
         {
           avatar: "avatar",
@@ -55,17 +56,47 @@ export default {
           content:
             "近日，全国近日，全国首场外汇市场准则培训在北京中国银行总行举办。中国银行副行长任德奇，外管局国际收支司司长王春英以及人近日"
         }
-      ]
+      ],
+      number: {
+        collect: "56",
+        number: "56",
+        like: "36",
+        wechart: "16"
+      },
+      iszan: "false",
+      iscollect: "false"
     };
   },
   methods: {
     toggleType(t) {
       this.type = t;
+    },
+    zan: function() {
+
+      if (!this.iszan) {
+        this.iszan = true;
+        this.number.like--;
+      } else {
+        this.iszan = false;
+        this.number.like++;
+      }
+    },
+    collect: function() {
+      if (!this.iscollect) {
+        this.iscollect = true;
+        this.number.collect--;
+      } else {
+        this.iscollect = false;
+        this.number.collect++;
+      }
     }
   }
 };
 </script>
 <style lang="less">
+.red {
+  color: red;
+}
 .material {
   .video {
     width: 100%;
@@ -109,22 +140,22 @@ export default {
         padding-left: 63px;
         background: 29% 50% no-repeat;
       }
-      .collect {
-        background-image: url(../assets/material/collect.png);
-        background-size: 35%;
-      }
+      // .collect {
+      //   background-image: url(../assets/material/collect.png);
+      //   background-size: 35%;
+      // }
       .number {
         background-image: url(../assets/myStudy/number.png);
         background-size: 50%;
       }
-      .like {
-        background-image: url(../assets/myStudy/like.png);
-        background-size: 35%;
-      }
-      .wechat {
-        background-image: url(../assets/myStudy/wechat.png);
-        background-size: 35%;
-      }
+      // .like {
+      //   background-image: url(../assets/myStudy/like.png);
+      //   background-size: 35%;
+      // }
+      // .wechat {
+      //   background-image: url(../assets/myStudy/wechat.png);
+      //   background-size: 35%;
+      // }
     }
   }
   .toggle {

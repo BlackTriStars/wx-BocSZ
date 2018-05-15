@@ -79,7 +79,7 @@ export default {
 <style lang="less">
   #surveyList{
     background: #edffff;
-    height: 100%;
+    min-height: 100vh;
     .title{
       width: 100%;
       height: 163px;

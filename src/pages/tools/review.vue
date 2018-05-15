@@ -1,5 +1,5 @@
 <template>
-<div class="tools">
+<div class="review">
     <div class="banner"></div>
     <div class="content">
         <div class="header"></div>
@@ -18,7 +18,7 @@ export default {};
 </script>
 
 <style lang="less">
-.tools {
+.review {
   position: relative;
   .banner {
     position: absolute;
