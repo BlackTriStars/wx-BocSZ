@@ -2,7 +2,7 @@
   <footer>
     <ul>
       <li v-for="(item, index) in list" :key="index" :class="{active: currentIndex === index}" @click="changeCurrentActive(index)">
-        <i></i>
+        <i :class="item.icon"></i>
         <span>{{item.content}}</span>
       </li>
     </ul>
@@ -16,12 +16,15 @@ export default {
       list:[
         {
           content:'首页',
+          icon: 'icon-home'
         },
         {
           content:'资料培训',
+          icon: 'icon-data'
         },
         {
           content:'我的',
+          icon: 'icon-user'
         }
       ],
       currentIndex: 0
@@ -45,6 +48,7 @@ export default {
           break;
       }
       this.$router.push({ name: url})
+      this.currentIndex = index;
     }
   },
   watch:{
@@ -52,8 +56,11 @@ export default {
       if(v.name === 'index'){ 
         this.currentIndex = 0;
       }
+      if(v.name === 'materialIndex'){ 
+        this.currentIndex = 1;
+      }
       if(v.name === 'user'){
-        this.currentIndex = 0;        
+        this.currentIndex = 2;        
       }
     }
   }
@@ -84,7 +91,11 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 21px 0;
-        font-size: 14px;/*px*/
+        font-size: 14px;
+        &>i{
+          font-size: 60px;
+          margin-bottom: 4px;
+        }
         &.active{
           color: #0082d8;
         }

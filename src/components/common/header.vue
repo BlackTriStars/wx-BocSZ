@@ -2,7 +2,7 @@
   <header :style="{background:header.color}">
     <i class="icon-home" @click="$router.push({name:'index'})"></i>
     {{header.title}}
-    <i class="right">刷新</i>
+    <i class="right icon-refresh"></i>
   </header>
 </template>
 
@@ -44,12 +44,16 @@ export default {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      font-size: 70px;
     }
     &>i:first-child{
       left: 40px;
     }
     &>i:last-child{
       right: 40px;
+      transform-origin: center;
+      font-weight: bold;
+      transform: scaleX(-1) translateY(-50%) rotate(-90deg);
     }
   }
 </style>

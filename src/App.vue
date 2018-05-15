@@ -37,7 +37,7 @@ export default {
         this.footerShow = true;
       } else {
         this.headerShow = true;
-        this.footerShow = false;
+        this.footerShow = true;
       }
       console.log(name);
       switch (name) {
