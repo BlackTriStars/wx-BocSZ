@@ -195,6 +195,7 @@ export default {
         height: 500px;
         width: 100%;
         background: #ccc;
+        position: relative;
         img{
           width: 100%;
           height: 100%;

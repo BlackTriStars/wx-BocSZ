@@ -16,8 +16,7 @@
           <p>{{item.content}}</p>
           <div class="data">
             <span v-for="(v,i) in item.data" :key="i">
-              <img src="../../assets/myStudy/number.png" alt="" v-if="v.name === 'num'">
-              <i :class="'icon-'+v.name" v-else></i>
+              <i :class="'icon-'+v.name"></i>
               {{v.value}}
             </span>
           </div>
@@ -52,7 +51,7 @@ export default {
           data:[
             {
               value: 56,
-              name: 'num'
+              name: 'users'
             },{
               value: 36,
               name: 'like'

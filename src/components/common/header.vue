@@ -2,7 +2,7 @@
   <header :style="{background:header.color}">
     <i class="icon-home" @click="$router.push({name:'index'})"></i>
     {{header.title}}
-    <i class="right icon-refresh"></i>
+    <i class="right icon-refresh" @click="reload"></i>
   </header>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   },
   computed:{
     ...mapState([ 'header'])
+  },
+  methods: {
+    reload(){
+      location.reload();
+    }
   },
   mouted(){
     

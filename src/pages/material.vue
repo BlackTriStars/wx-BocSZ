@@ -11,7 +11,7 @@
         </span>
         <div class="status">
           <span class="collect icon-love"  @click="collect">{{this.number.collect}}</span>
-          <span class="number">{{this.number.number}}</span>
+          <span class="icon-users">{{this.number.number}}</span>
           <span class="like icon-like" @click="zan">{{this.number.like}}</span>
           <span class="wechat icon-wechat">{{this.number.wechart}}</span>
         </div>
@@ -144,10 +144,10 @@ export default {
       //   background-image: url(../assets/material/collect.png);
       //   background-size: 35%;
       // }
-      .number {
-        background-image: url(../assets/myStudy/number.png);
-        background-size: 50%;
-      }
+      // .number {
+      //   background-image: url(../assets/myStudy/number.png);
+      //   background-size: 50%;
+      // }
       // .like {
       //   background-image: url(../assets/myStudy/like.png);
       //   background-size: 35%;

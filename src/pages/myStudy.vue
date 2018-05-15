@@ -14,9 +14,9 @@
           <h4>{{item.title}}</h4>
           <p>{{item.text}}</p>
           <div class="status">
-            <span class="number">{{item.numberNum}}</span>
-            <span class="like" @click="zan(index)">{{item.likeNum}}</span>
-            <span class="wechat">{{item.wechartNum}}</span>
+            <span class="icon-users">{{item.numberNum}}</span>
+            <span class="icon-like" @click="zan(index)">{{item.likeNum}}</span>
+            <span class="icon-wechat">{{item.wechartNum}}</span>
           </div>
         </li>
       </ul>
@@ -160,18 +160,18 @@ export default {
           padding-left: 63px;
           background: 0 50% no-repeat;
         }
-        .number {
-          background-image: url(../assets/myStudy/number.png);
-          background-size: 30%;
-        }
-        .like {
-          background-image: url(../assets/myStudy/like.png);
-          background-size: 20%;
-        }
-        .wechat {
-          background-image: url(../assets/myStudy/wechat.png);
-          background-size: 20%;
-        }
+        // .number {
+        //   background-image: url(../assets/myStudy/number.png);
+        //   background-size: 30%;
+        // }
+        // .like {
+        //   background-image: url(../assets/myStudy/like.png);
+        //   background-size: 20%;
+        // }
+        // .wechat {
+        //   background-image: url(../assets/myStudy/wechat.png);
+        //   background-size: 20%;
+        // }
       }
     }
   }
