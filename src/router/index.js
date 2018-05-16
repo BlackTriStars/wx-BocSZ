@@ -42,6 +42,7 @@ import toolsIndex from '@/pages/tools/index.vue'
 import toolsApp from '@/pages/tools/app.vue'
 import toolsLive from '@/pages/tools/live.vue'
 import toolsReview from '@/pages/tools/review.vue'
+import trainMaterial from '@/pages/trainMaterial.vue'
 
 Vue.use(Router)
 
@@ -167,6 +168,11 @@ export default new Router({
           component: toolsReview
         }
       ]
+    },
+    {
+      path: '/trainMaterial',
+      name: 'trainMaterial',
+      component: trainMaterial
     }
 
   ]
