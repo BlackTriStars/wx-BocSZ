@@ -24,9 +24,6 @@ export default {
   mounted() {
     this.checkoutPath(this.$route.name);
   },
-  updated() {  
-        window.scroll(0, 0);  
-  },
   methods: {
     ...mapMutations(["changeHeader"]),
     // 根据当前url 给header设置不同颜色
@@ -75,6 +72,9 @@ export default {
           break;
           case "trainPlan":
           this.changeHeader({ title: "培训计划" });
+          break;
+          case "materialIndex":
+          this.changeHeader({ title: "培训资料" });
           break;
         default:
           break;

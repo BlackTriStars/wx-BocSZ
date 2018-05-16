@@ -27,6 +27,9 @@ export default {
   },
   components:{
     BocHeader,BocFooter
+  },
+  updated(){
+    document.querySelector('.appContent').scrollTop = 0;
   }
 }
 </script>

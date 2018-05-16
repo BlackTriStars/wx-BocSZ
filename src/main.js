@@ -5,9 +5,13 @@ import App from './App'
 import router from './router'
 import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueScroller from 'vue-scroller'
+Vue.use(VueScroller)
 
 Vue.config.productionTip = false
 import 'lib-flexible';
+
+import 'whatwg-fetch';
 
 Vue.use(VueAwesomeSwiper);
 
