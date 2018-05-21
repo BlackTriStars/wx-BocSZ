@@ -62,6 +62,7 @@
 
 <script>
 import search from '@/components/common/search.vue'
+import { MessageBox } from 'mint-ui'
 export default {
   data(){
     return{
@@ -184,6 +185,20 @@ export default {
     go(name){
       this.$router.push({name})
     }
+  },
+  mounted(){
+    MessageBox({
+      title: '提示',
+      message: 'mounted钩子执行的第一个提示框',
+      showCancelButton: true
+    }).then(()=>{
+      MessageBox.confirm('这是第二个 在第一个Promise的then里').then(action => {
+        MessageBox({
+          showCancelButton: false,
+          message: '别的参数见 http://mint-ui.github.io/docs/#/zh-cn2/message-box'
+        })
+      });
+    })
   }
 }
 </script>
