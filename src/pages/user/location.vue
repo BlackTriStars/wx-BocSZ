@@ -23,6 +23,7 @@
       </div>
       <div class="map"></div>
     </div>
+    <div class="bottom"></div>
   </div>
 
 </template>
