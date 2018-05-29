@@ -74,17 +74,17 @@ export default {
         {
           content:'实用工具',
           img:'nav-tools',
-          name: 'tools'          
+          name: 'tools'
         },
         {
           content:'培训计划',
           img:'nav-plan',
-          name: 'trainPlan'          
+          name: 'trainPlan'
         },
         {
           content:'问卷调查',
           img:'nav-research',
-          name: 'survey'          
+          name: 'survey'
         }
       ],
       mainList:[
