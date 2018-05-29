@@ -67,14 +67,17 @@ export default {
           break;
         case "recommended":
           this.changeHeader({ title: "热门推荐" });
-          case "tools":
+        case "tools":
           this.changeHeader({ title: "实用工具" });
           break;
-          case "trainPlan":
+        case "trainPlan":
           this.changeHeader({ title: "培训计划" });
           break;
-          case "materialIndex":
+        case "materialIndex":
           this.changeHeader({ title: "培训资料" });
+          break;
+        case "location":
+          this.changeHeader({title: "培训中心介绍" , color: '#DB3F40'})
           break;
         default:
           break;

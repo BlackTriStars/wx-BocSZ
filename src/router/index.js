@@ -9,6 +9,7 @@ import userIndex from '@/pages/user/index.vue'
 import collection from '@/pages/user/collection.vue'
 import integral from '@/pages/user/integral.vue'
 import introduce from '@/pages/user/introduce.vue'
+import location from '@/pages/user/location.vue'
 //  survey
 import survey from '@/pages/survey.vue'
 import surveyIndex from '@/pages/survey/index.vue'
@@ -72,7 +73,12 @@ export default new Router({
           path: 'introduce',
           name: 'introduce',
           component: introduce
+        }, {
+          path: 'location',
+          name: 'location',
+          component: location
         }
+
       ]
     },
     {
