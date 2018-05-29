@@ -16,7 +16,10 @@
           <p class="time">{{item.time}}</p>
         </div>
         <div class="rightArea">
-          <img src="../../assets/user/gold.png" alt="">
+          <div class="img">
+            <span class="money"></span>
+            <span class="number">+{{item.jifen}}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -34,15 +37,18 @@ export default {
           {
             title: '课程学习',
             desc: '企业文化课程',
-            time: '2018-0420'
+            time: '2018-0420',
+            jifen: 1
           },{
             title: '课程学习',
             desc: '企业文化课程',
-            time: '2018-0420'
+            time: '2018-0420',
+            jifen: 1
           },{
             title: '课程学习',
             desc: '企业文化课程',
-            time: '2018-0420'
+            time: '2018-0420',
+            jifen: 1
           },
         ]
       }
@@ -111,9 +117,28 @@ export default {
           }
         }
         .rightArea {
-          img{
+          .img{
             width: 182px;
             height: 80px;
+            background: url('../../assets/user/jifenbg.png') 0 0 no-repeat;
+            background-size: 100% 100%;
+            line-height: 80px;
+            padding: 0 35px;
+            vertical-align: middle;
+            .money {
+              width: 50px;
+              height: 100%;
+              display: inline-block;
+              background: url('../../assets/user/money.png') 0 50% no-repeat;
+              background-size: 50px 50px;
+            }
+            .number {
+              height: 100%;
+              display: inline-block;
+              float: right;
+              font-size: 31px;
+              color: #f49d31;
+            }
           }
         }
       }
