@@ -13,9 +13,9 @@
       <div class="tip">
         <img src="../../assets/location/tip.png" alt="">
       </div>
-      <div class="map">
+      <a :href="mapDirection" class="map">
         <img :src="locMap" class="">
-      </div>
+      </a>
     </div>
     <div class="traffic" v-for="(item, index) in traffic" :key="index">
       <div class="title">
@@ -27,17 +27,19 @@
         </div>
         <span>{{item.title}}</span>
         <div class="trafficBtn">
-          <div class="btn" :class="{active:item.current===i}" v-for="(btn,i) in item.btn" :key="i">{{btn}}</div>
+          <div
+            class="btn"
+            :class="{active:item.current===i}"
+            @click="changeStation(index,i)"
+            v-for="(btn,i) in item.btn"
+            :key="i">{{btn}}</div>
         </div>
       </div>
-      <div class="map" :class="{active:item.current===i}" v-if="/.png|.jpg|.jpeg/.test(item.map)">
+      <div class="map" v-if="/.png|.jpg|.jpeg/.test(item.map)">
         <img :src="item.map[item.current]" alt="">
       </div>
-      <div class="map" :class="{active:item.current===i}" v-else>
-        <div class="arror">
-          <img src="../../assets/location/arror.png" alt="">
-        </div>
-        {{item.map}}
+      <div class="map" v-else>
+        {{item.map[item.current]}}
       </div>
     </div>
     <div class="bottom">
@@ -53,6 +55,7 @@ export default {
       bannerImg: require('../../assets/location/banner@3x.png'),
       introduce: `分行培训中心于<span class="important">2017年1月</span>启用，位于<span class="important">深圳市福田区景田北环大道7003号中审大厦</span>。中审大厦是我行与国家审计署合作建设的综合性大楼，我行房产面积<span class="important">14168.35平方米</span>，培训中心占用面积<span class="important">2659.27平方米</span> 。`,
       locMap: require('../../assets/location/map@3x.png'),
+      mapDirection: 'https://www.baidu.com',
       traffic:[
         {
           title: '请记住两个地铁站',
@@ -61,14 +64,27 @@ export default {
           current:0,
           map: [
             'http://www.xzknow.com/bocedu/assets/index/banner.png',
-            'http://www.xzknow.com/bocedu/assets/index/banner.png',
+            'http://www.xzknow.com/bocedu/assets/dynamic/dynamic-banner.png',
           ]
         },{
           title: '请记住这些公交站台',
           btn: ['紫薇阁总站','深圳石油大厦','福田中医院'],
           iconImg: require('../../assets/location/bus.png'),          
           current: 0,
-          map: ''
+          map: [
+            `第一站 title: '请记住这些公交站台',
+          btn: ['紫薇阁总站','深圳石油大厦','福田中医院'],
+          iconImg: require('../../assets/location/bus'),          
+          current: 0,`,
+          `第二站 title: '请记住这些公交站台',
+          btn: ['紫薇阁总站','深圳石油大厦','福田中医院'],
+          iconImg: require('../../assets/location/bus'),          
+          current: 0,`,
+          `第三站 title: '请记住这些公交站台',
+          btn: ['紫薇阁总站','深圳石油大厦','福田中医院'],
+          iconImg: require('../../assets/location/bus'),          
+          current: 0,`
+          ]
         }
       ]
 
@@ -84,7 +100,9 @@ export default {
     
   },
   methods: {
-    
+    changeStation(index,i){
+      this.traffic[index].current = i;
+    }
   }
 }
 </script>
@@ -115,6 +133,7 @@ export default {
       position: relative;
       padding-top: 48px;
       .map{
+        display: block;
         width: 56.39%;
         position: absolute;
         top: 11px;
@@ -186,16 +205,16 @@ export default {
         background: #fff;
         margin-top: 36px;
         position: relative;
-        &:before{
-          content: '';
-          position: absolute;
-          height: 0px;
-          width: 0px;
-          border-left: 15px solid transparent;
-          border-bottom: 15px dashed #fff;
-          border-right: 15px solid transparent;
-          top: -15px;
-        }
+        // &:before{
+        //   content: '';
+        //   position: absolute;
+        //   height: 0px;
+        //   width: 0px;
+        //   border-left: 15px solid transparent;
+        //   border-bottom: 15px dashed #fff;
+        //   border-right: 15px solid transparent;
+        //   top: -15px;
+        // }
         img{
           border-radius: 10px;
           // border: 0px solid transparent;
