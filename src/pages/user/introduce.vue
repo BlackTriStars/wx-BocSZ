@@ -2,12 +2,12 @@
   <div id="introduce">
     <div class="one" v-if="part === 0">
       <div class="bg">
-        <img src="../../assets/user/introduce-0.png" alt="">
+        <img src="../../assets/user/introduce-0.png" mode="widthFix"/>>
       </div>
     </div>
     <div class="two" v-if="part === 1">
       <div class="bg">
-        <img src="../../assets/user/introduce-1.png" alt="">
+        <img src="../../assets/user/introduce-1.png" mode="widthFix" />
       </div>
       <div class="first">
         <!-- :style="{top:parseInt((index+1)/2)}" 814/28.5% -->
